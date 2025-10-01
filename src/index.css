@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Lato:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Erstoria";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/Erstoria.woff2") format("woff2"),
+    url("./assets/fonts/Erstoria.ttf") format("truetype");
+}
+.sty-font {
+  font-family: "Erstoria";
+}
+@font-face {
+  font-family: "Meta";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/meta-normal.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/Oswald-VariableFont_wght.ttf") format("truetype");
+}
+.metafont {
+  font-family: "Meta";
+}
+
+:root {
+  --sixtypx: 60px;
+  --thirtysixpx: 36px;
+  --twentyfourpx: 24px;
+  --twentypx: 20px;
+  --sixteenpx: 16px;
+  --fourteenpx: 14px;
+  --twelvepx: 12px;
+}
+
+.lato {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-text-family {
+  font-family: "Corben", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-size: var(--sixtypx);
+  font-weight: 600;
+  line-height: 60px;
+}
+
+h2 {
+  font-size: var(--thirtysixpx);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--twentyfourpx);
+  /* font-weight: 500; */
+}
+
+h4 {
+  font-size: var(--twentypx);
+}
+h5 {
+  font-size: var(--sixteenpx);
+}
+
+h6 {
+  font-size: var(--fourteenpx);
+}
+.cta {
+  /* background-color: #9e0000; */
+  background-color: #000000;
+  transition: all 0.4s;
+}
+.cta:hover {
+  background-color: #2a2a2a;
+  transition: all 0.4s;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.background {
+  /* background-color: rgba(255, 136, 0, 0.24); */
+  background-image: linear-gradient(
+    130deg,
+    #b33601 20%,
+    rgb(255, 255, 255) 80%
+  );
+}
+.input-border {
+  border: 1px solid black;
+}
+.banner-card {
+  background: rgba(126, 44, 0, 0.5);
+}
+.background-rectangle {
+  background-color: #b33601;
+}
+.testimonial {
+  /* background-color: rgba(255, 136, 0, 0.24); */
+  background: #f3f2f2;
+}
+
+.text-highlight {
+  color: #fcc90e;
+}
+
+.nav-strip {
+  /* background-color: #101010; */
+  background-color: #ffffff;
+  /* background-color: #b33601; */
+}
+.footer {
+  background-color: #f8efee;
+  background-image: url(./assets/city.png);
+  background-repeat: repeat-x;
+  background-size: 1000px;
+  background-position: bottom;
+}
+.sub-footer {
+  background-color: #e7c4be;
+}
+.card-background {
+  background-color: #faf7f3;
+}
+.nav-hover:hover {
+  background-color: #f3f8ff;
+  border-radius: 5px;
+  transition: all 0.4s;
+}
+
+.float-label-input:focus-within label,
+.float-label-input input:not(:placeholder-shown) + label {
+  transform: translateY(-1.5rem) scale(0.75);
+  background-color: white;
+}
+
+.loader {
+  animation: rotate 1s infinite;
+  height: 50px;
+  width: 50px;
+}
+
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+.loader:before {
+  animation: ball1 1s infinite;
+  background-color: #fff;
+  box-shadow: 30px 0 0 #ff3d00;
+  margin-bottom: 10px;
+}
+.loader:after {
+  animation: ball2 1s infinite;
+  background-color: #ff3d00;
+  box-shadow: 30px 0 0 #fff;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(0.8);
+  }
+  50% {
+    transform: rotate(360deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(720deg) scale(0.8);
+  }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #ff3d00;
+  }
+  50% {
+    box-shadow: 0 0 0 #ff3d00;
+    margin-bottom: 0;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #ff3d00;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #fff;
+  }
+  50% {
+    box-shadow: 0 0 0 #fff;
+    margin-top: -20px;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #fff;
+    margin-top: 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
