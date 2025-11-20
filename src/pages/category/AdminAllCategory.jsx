@@ -9,6 +9,7 @@ import {
 import { Modal, Switch } from "antd";
 import { ButtonLoader } from "../../components/general/ButtonLoader";
 import { FaEdit } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
 import useFilteration from "../../hook/useFilteration";
 import { AdminUpdateCategory } from "./AdminUpdateCategory";
 import { AdminAddCategory } from "./AdminAddCategory";
@@ -301,7 +302,7 @@ export const AdminAllCategory = () => {
                                 <span className="tooltiptext">Edit</span>
                               </button>
 
-                              {/* <button
+                              <button
                                 onClick={() => {
                                   setDeleteCateModal(true);
                                   setId(item.id);
@@ -310,7 +311,7 @@ export const AdminAllCategory = () => {
                               >
                                 <AiFillDelete className="text-3xl text-red-600" />
                                 <span className="tooltiptext">Delete</span>
-                              </button> */}
+                              </button>
                             </td>
                           </tr>
                         );

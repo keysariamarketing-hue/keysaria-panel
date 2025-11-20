@@ -1,9 +1,11 @@
 //admin create product api function call here..........................
 export const adminCreateProduct = async (allData) => {
   const { privateAxios, data } = allData;
+  console.log('data: ', data);
+
   return await privateAxios.post(
     `/admin/product/createNewProduct`,
-    { ...data },
+    data, // Pass FormData directly, don't spread it
     {
       headers: {
         'Content-Type': 'multipart/form-data',

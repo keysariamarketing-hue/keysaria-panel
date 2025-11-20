@@ -96,8 +96,10 @@ export const AdminAddProduct = () => {
     // Append product stock list as JSON string
     formData.append("productStockList", JSON.stringify(productStockList));
 
-    // Append images
-    formData.append("productImages[", productImages); // Ensure the key is 'productImages'
+    // Append images - each file individually
+    productImages.forEach((file, index) => {
+      formData.append("productImage[]", file); // Correct key is 'productImages'
+    });
 
     console.log("Final FormData Content:");
     for (let pair of formData.entries()) {
@@ -106,7 +108,7 @@ export const AdminAddProduct = () => {
 
     try {
       setLoader(true);
-      const res = await adminCreateProduct({ privateAxios, formData });
+      const res = await adminCreateProduct({ privateAxios, data: formData });
       if (res.status === 201) {
         reset();
         setProductImages([]);
